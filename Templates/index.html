@@ -86,16 +86,16 @@
                         {% endif %}               
                     </h3>
                 </div>
-                <div class="justify-content-center">
+                <div class="justify-content-center table-responsive">
                     {% for day, daily_timetable in timetable_by_days.items %}
                     {% if daily_timetable %}
-                    {{ day }}
-                    <table class="table align-self-center table-responsive">
+                    <strong>{{ day }}</strong>
+                    <table class="table align-self-center" width="100%">
                             <thead class="table-group-divider table-ruby">
-                            <th width="15%">Время</th>
-                            <th width="60%">Дисциплина</th>
-                            <th>Аудитория</th>
-                            <th>
+                            <th width="15%" class="text-center">Время</th>
+                            <th width="45%" class="text-center">Дисциплина</th>
+                            <th >Аудитория</th>
+                            <th width="35%" class="text-center">
                                 {% if is_group %}
                                 Преподаватель
                                 {% else %}
@@ -112,9 +112,9 @@
                                         {% if not each.classroom %}
                                             <td>-</td>
                                         {% else %}
-                                            <td>{{ each.classroom }}</td>
+                                            <td align="center">{{ each.classroom }}</td>
                                         {% endif %}                                      
-                                        <td>
+                                        <td align="center">
                                             {% if is_group %}
                                             {{ each.tutor }}
                                             {% else %}
